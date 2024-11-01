@@ -1,6 +1,6 @@
 # Update a Book Detail
 books = Book.objects.get(pk=6)
-books.title = "Nineteen-Eighty-Four"
+books.title = "Nineteen Eighty-Four"
 books.save()
 # Print Resukt
  print(
@@ -10,7 +10,7 @@ books.save()
 ...   "---------"
 ... )
 # Expected Output
-Title: Nineteen-Eighty-Four
+Title: Nineteen Eighty-Four
 Author: George Orwell
 Publication Year: 1949
 -----------
