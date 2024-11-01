@@ -1,4 +1,4 @@
-# Retrieve a newly created book
+# Retrieve newly created book
 books = Book.objects.get(pk=6)
  print(
 ...   f"Title: {book.title}\n"
