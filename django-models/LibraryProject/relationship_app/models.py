@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 class Author(models.Model):
     name = models.CharField(max_length=200)
     
@@ -19,11 +18,11 @@ class Library(models.Model):
     books = models.ManyToManyField(Book)
     
     def __str__(self):
-        return self.title
+        return self.name
 
 class Libarian(models.Model):
     name = models.CharField(max_length=200)
-    library = models.OneToOneField(Book, on_delete=models.CASCADE)
+    library = models.OneToOneField(Library, on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.title
+        return self.name
