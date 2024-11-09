@@ -13,3 +13,4 @@ __pycache__/
 # IDE or text editor settings
 .vscode/
 .idea/
+.DS_Store
