@@ -1,25 +1,22 @@
+# relationship_app/views.py
 from django.shortcuts import render
 from django.views.generic import DetailView
 from .models import Book, Library
-from django.shortcuts import render
 
+# Function-based view to display a list of books and their authors
 def book_list(request):
-      """Retrieves all books and renders a template displaying the list."""
-      books = Book.objects.all()  # Fetch all book instances from the database
-      
-      book_date = []
-      for book in books:
-            book_date.append(f"Title: {book.title}, Author: {book.author.name}")
-            
-            
+    """Retrieves all books and renders a template displaying the list."""
+    books = Book.objects.all()  # Fetch all book instances from the database
+    return render(request, 'relationship_app/list_books.html', {'books': books})
+
+# Class-based view to display library details along with its books
 class LibraryDetailView(DetailView):
     model = Library
-    template_name = 'library_detail.html' 
-    context_object_name = 'library'  
+    template_name = 'relationship_app/library_detail.html'  # Template to render
+    context_object_name = 'library'  # Name the context variable for the template
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        library = self.get_object()  # Get the Library object
-        context['books'] = relationship_app/list_books.html, Books.objects.all()  # Get all books related to this library
+        library = self.get_object()  # Get the specific library object
+        context['books'] = library.books.all()  # Get all books related to this library using the ManyToMany relationship
         return context
-
