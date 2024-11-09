@@ -20,6 +20,6 @@ class LibraryDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         library = self.get_object()  # Get the Library object
-        context['books'] = library.books.all()  # Get all books related to this library
+        context['books'] = relationship_app/list_books.html, Books.objects.all()  # Get all books related to this library
         return context
 
