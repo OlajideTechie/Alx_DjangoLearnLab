@@ -1,0 +1,15 @@
+# Virtual environment directories
+vene/
+myenv/
+
+# Python bytecode files
+*.pyc
+*.pyo
+__pycache__/
+
+# Database files
+*.sqlite3
+
+# IDE or text editor settings
+.vscode/
+.idea/
