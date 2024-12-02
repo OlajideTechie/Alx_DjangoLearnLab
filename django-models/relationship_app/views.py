@@ -1,7 +1,8 @@
 # relationship_app/views.py
 from django.shortcuts import render
 from django.views.generic import DetailView
-from .models import Book, Library
+from .models import Book
+from .models import Library
 
 # Function-based view to display a list of books and their authors
 def book_list(request):
